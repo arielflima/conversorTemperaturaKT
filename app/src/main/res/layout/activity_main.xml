@@ -9,45 +9,57 @@
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editTemperatura"
-            android:hint="Digite a Temperatura" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/radioCelcius" android:gravity="center"
+            android:hint="Digite a Temperatura"
+            android:gravity="center"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
             android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:textSize="30sp"
-            android:textColor="@android:color/holo_orange_dark"/>
-    <RadioButton
-            android:text="Celcius"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioCelcius"
-            app:layout_constraintTop_toBottomOf="@+id/editTemperatura"
-            app:layout_constraintBottom_toTopOf="@+id/radioFahrenheit" android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:textColor="@android:color/holo_red_dark" android:textSize="24sp"/>
-    <RadioButton
-            android:text="Fahrenheit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioFahrenheit"
-            app:layout_constraintTop_toBottomOf="@+id/radioCelcius"
-            app:layout_constraintBottom_toTopOf="@+id/buttonConverter" android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" android:textColor="@android:color/holo_red_dark"
-            app:layout_constraintHorizontal_bias="0.498" android:textSize="24sp"/>
+            android:textColor="@android:color/holo_orange_dark" android:inputType="number"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"/>
     <Button
             android:text="CONVERTER TEMPERATURA"
             android:layout_width="278dp"
             android:layout_height="50dp"
             android:id="@+id/buttonConverter"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/radioFahrenheit"
             android:gravity="center" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintHorizontal_bias="0.495"/>
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
+    <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="243dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:gravity="center" android:id="@+id/radioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/editTemperatura"
+            app:layout_constraintBottom_toTopOf="@+id/buttonConverter">
+        <RadioButton
+                android:text="Celsius"
+                android:layout_width="wrap_content"
+                android:layout_height="135dp"
+                android:id="@+id/radioCelsius"
+                app:layout_constraintTop_toBottomOf="@+id/editTemperatura"
+                app:layout_constraintBottom_toTopOf="@+id/radioFahrenheit" android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/holo_red_dark" android:textSize="24sp"/>
+        <RadioButton
+                android:text="Fahrenheit"
+                android:layout_width="wrap_content"
+                android:layout_height="138dp"
+                android:id="@+id/radioFahrenheit"
+                app:layout_constraintTop_toBottomOf="@+id/radioCelsius"
+                app:layout_constraintBottom_toTopOf="@+id/buttonConverter" android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp" android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintHorizontal_bias="0.498" android:textSize="24sp"/>
+    </RadioGroup>
 </android.support.constraint.ConstraintLayout>
